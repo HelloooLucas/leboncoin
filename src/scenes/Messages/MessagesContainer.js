@@ -9,6 +9,13 @@ const MessagesContainer = ({ username }) => {
 	const [shouldFetch, setShouldFetch] = useState(true);
 	const authorizedMessages = messages.filter(msg => !msg.isPrivate || msg.author === username);
 	useEffect(() => {
+		fetchMessages(setMessages);
+		const intervalId = setInterval(() => {
+			fetchMessages(setMessages);
+		}, 3000);
+		return () => clearInterval(intervalId);
+	}, [])
+	useEffect(() => {
 		shouldFetch && fetchMessages(setMessages);
 		setShouldFetch(false);
 	}, [shouldFetch]);

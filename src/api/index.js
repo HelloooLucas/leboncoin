@@ -3,7 +3,7 @@ const apiUrl = 'http://localhost:3001/messages';
 
 export const fetchMessages = (setMessages) =>
 	axios.get(apiUrl)
-		.then(response => setMessages(response.data))
+		.then(response => {console.log('fetched'); setMessages(response.data)})
 		.catch(error => console.log('error'));
 
 export const postMessage = message =>
