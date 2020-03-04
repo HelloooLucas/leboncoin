@@ -9,7 +9,7 @@ import { SimpleForm, TextInput, Checkbox, Button } from './../../components';
 
 const Icon = styled(FontAwesomeIcon)`
 	font-size: ${({ theme }) => theme.fontSizes.xl };
-	color: ${({ theme, isPrivate }) => isPrivate ? theme.colors.disabled : theme.colors.enabled };
+	color: ${({ theme, isprivate }) => isprivate ? theme.colors.disabled : theme.colors.enabled };
 `;
 
 const MessagesForm = ({ username, setShouldFetch }) => {
@@ -50,14 +50,14 @@ const MessagesForm = ({ username, setShouldFetch }) => {
 				value={content}
 				onChange={handleContentChange}
 				placeholder='Type a message...'
-				flex={1}
+				long
 			/>
 			<Checkbox
 				id='isPrivate'
 				value={isPrivate}
 				onChange={handleIsPrivateChange}
 			>
-				<Icon icon={checboxIcon} isPrivate={isPrivate} />
+				<Icon icon={checboxIcon} isprivate={isPrivate} />
 			</Checkbox>
 			<Button type="submit" color="confirm">Send</Button>
 		</SimpleForm>

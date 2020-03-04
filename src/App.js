@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 
 import { Login, Messages } from './scenes';
 import { Nav } from './components';
 import { GlobalStyle } from './style';
+
 
 function App() {
 	const [username, setUsername] = useState('Lucas');

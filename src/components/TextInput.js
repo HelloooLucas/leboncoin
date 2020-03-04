@@ -3,12 +3,11 @@ import styled from 'styled-components';
 
 const Input = styled.input`
 	${({ theme }) => ({ ...theme.neumorphism.inset })};
-	${({ flex }) => flex ? ({ flex: flex }) : ({ width: '250px' })}
+	${({ long }) => long ? ({ flex: 1 }) : ({ width: '250px' })}
 	height: 50px;
 	margin-right: 30px;
 	padding-left: 20px;
 	font-size: ${({ theme }) => theme.fontSizes.xl };
-	color: ${({ theme }) => theme.colors.darkDrey };
 	outline: none;
 
 	::placeholder {
@@ -16,14 +15,14 @@ const Input = styled.input`
 	}
 `;
 
-const TextInput = ({ value, onChange, placeholder, flex }) => {
+const TextInput = ({ value, onChange, placeholder, long }) => {
 	return (
 		<Input
 			type='text'
 			value={value}
 			onChange={onChange}
 			placeholder={placeholder}
-			flex={flex}
+			long={long}
 		/>
 	);
 }

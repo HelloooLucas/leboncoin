@@ -3,18 +3,19 @@ import styled from 'styled-components';
 
 const StyledButton = styled.button`
 	${({ theme }) => ({ ...theme.neumorphism.outset })};
-	width: 100px;
+	width: ${({ square }) => square ? '50px' : '100px'};
 	height: 50px;
 	background: ${({ theme, color }) => color ? theme.colors[color] : theme.colors.background};
 	cursor: pointer;
 	outline: none;
 `;
 
-const Button = ({ type, color, children }) => {
+const Button = ({ type, color, square, children }) => {
 	return (
 		<StyledButton
 			type={type}
 			color={color}
+			square={square}
 		>
 			{children}
 		</StyledButton>

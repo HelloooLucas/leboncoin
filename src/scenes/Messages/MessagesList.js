@@ -1,9 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+	width: 100%;
+	flex: 1;
+`;
 
 const MessagesList = ({ username, messages }) => {
 	return (
-		<>
-			<h2>Hello, {username}</h2>
+		<Wrapper>
 			<ul>
 				{messages.map(({ author, content, id }) => (
 					<li key={id}>
@@ -12,7 +17,7 @@ const MessagesList = ({ username, messages }) => {
 					</li>
 				))}
 			</ul>
-		</>
+		</Wrapper>
 	);
 }
  

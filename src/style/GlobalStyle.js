@@ -38,17 +38,23 @@ const GlobalStyle = createGlobalStyle`
 
 	/* MY GLOBAL STYLES */
 
+	* {
+		box-sizing: border-box;
+	}
+
 	html {
 		font-size: 14px;
 		box-sizing: border-box;
 		font-family: Lato, 'sans-serif';
 		background-color: ${colors.background};
+		color: ${colors.darkGrey};
 	}
 
 	body {
 		max-width: 800px;
 		height: 100vh;
 		margin: 0 auto;
+		padding: 50px 0;
 	}
 
 	button,
