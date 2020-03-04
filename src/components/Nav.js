@@ -10,11 +10,12 @@ const Wrapper = styled.nav`
 	height: 50px;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 `;
 
 const Icon = styled(FontAwesomeIcon)`
 	font-size: ${({ theme }) => theme.fontSizes.xl};
-	color: ${({ theme }) => theme.colors.disabled};
+	color: ${({ theme }) => theme.colors.private};
 `;
 
 const Greeting = styled.h3`

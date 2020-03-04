@@ -19,10 +19,10 @@ const Message = styled.div`
 	margin-bottom: 24px;
 	font-size: ${({ theme }) => theme.fontSizes.l };
 	color: ${({ theme }) => theme.colors.background };
-	${({ isAuthor, theme }) =>
+	${({ isAuthor, isPrivate, theme }) =>
 		isAuthor ? ({
 			alignSelf: 'flex-end',
-			background: theme.colors.enabled,
+			background: isPrivate ? theme.colors.private : theme.colors.public,
 			textAlign: 'right',
 			padding: '12px 12px 12px 24px',
 			marginRight: 15,
@@ -42,10 +42,10 @@ const AuthorName = styled.h3`
 const MessagesList = ({ username, messages }) => {
 	return (
 		<Wrapper>
-			{messages.map(({ author, content, id }) => {
+			{messages.map(({ author, content, isPrivate, id }) => {
 				const isAuthor = author === username;
 				return (
-					<Message key={id} isAuthor={isAuthor}>
+					<Message key={id} isAuthor={isAuthor} isPrivate={isPrivate}>
 						{!isAuthor && <AuthorName>{author}</AuthorName>}
 						<p>{content}</p>
 					</Message>
