@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
+// import axios from 'axios';
 
 import { postMessage } from './../../api';
+import { SimpleForm, TextInput, Checkbox, Button } from './../../components';
+
+const Icon = styled(FontAwesomeIcon)`
+	font-size: ${({ theme }) => theme.fontSizes.xl };
+	color: ${({ theme, isPrivate }) => isPrivate ? theme.colors.disabled : theme.colors.enabled };
+`;
 
 const MessagesForm = ({ username, setShouldFetch }) => {
 	// const reset = () => {
@@ -22,6 +31,7 @@ const MessagesForm = ({ username, setShouldFetch }) => {
 	// }
 	const [content, setContent] = useState('');
 	const [isPrivate, setIsPrivate] = useState(false);
+	const checboxIcon = isPrivate ? faEyeSlash : faEye;
 	const handleContentChange = e => setContent(e.target.value);
 	const handleIsPrivateChange = () => setIsPrivate(!isPrivate);
 	const handleSubmit = e => {
@@ -34,13 +44,23 @@ const MessagesForm = ({ username, setShouldFetch }) => {
 		}
 	};
 	return (
-		<form onSubmit={handleSubmit}>
+		<SimpleForm handleSubmit={handleSubmit}>
 			{/* <button onClick={reset}>RESET</button> */}
-			<input type="text" value={content} onChange={handleContentChange} />
-			<label htmlFor="isPrivate"></label>
-			<input name="isPrivate" type="checkbox" value={isPrivate} onChange={handleIsPrivateChange} />
-			<button type="submit">Send</button>
-		</form>
+			<TextInput
+				value={content}
+				onChange={handleContentChange}
+				placeholder='Type a message...'
+				flex={1}
+			/>
+			<Checkbox
+				id='isPrivate'
+				value={isPrivate}
+				onChange={handleIsPrivateChange}
+			>
+				<Icon icon={checboxIcon} isPrivate={isPrivate} />
+			</Checkbox>
+			<Button type="submit" color="confirm">Send</Button>
+		</SimpleForm>
 	);
 }
  

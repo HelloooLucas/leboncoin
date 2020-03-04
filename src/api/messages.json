@@ -2,32 +2,32 @@
   "messages": [
     {
       "id": 0,
-      "author": "Lucas",
-      "content": "Hello, this is my first message",
+      "author": "Paul",
+      "content": "Wassup guys, vous faites quelque chose ce soir ?",
       "isPrivate": false
     },
     {
       "id": 1,
-      "author": "Lucas",
-      "content": "What about a private one?",
-      "isPrivate": true
+      "author": "Martin",
+      "content": "Chaud d'un ciné, ils jouent encore Parasite je crois",
+      "isPrivate": false
     },
     {
       "id": 2,
       "author": "Lucas",
-      "content": "And a public one again?",
+      "content": "Archi chaud faut que je le voie, je propose à Marie",
       "isPrivate": false
     },
     {
       "id": 3,
-      "author": "John",
-      "content": "I'm Lucas' friend",
+      "author": "Paul",
+      "content": "Lourd je vous rejoins",
       "isPrivate": false
     },
     {
       "id": 4,
-      "author": "John",
-      "content": "I think he's the best",
+      "author": "Paul",
+      "content": "Sérieux il peut rien faire sans Marie ?",
       "isPrivate": true
     }
   ]
