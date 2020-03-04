@@ -3,9 +3,10 @@ const colors = {
   lighter: "#fff",
   darker: "#aaa",
   darkGrey: "#555",
+  lightGrey: '#999',
   enabled: "#0cbfe9",
   disabled: "#ff8400",
-  confirm: "#63ed41"
+  submit: "#63ed41"
 };
 
 export default colors;

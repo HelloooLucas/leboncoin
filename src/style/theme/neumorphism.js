@@ -7,7 +7,7 @@ const neumorphism = {
 			5px 5px 10px ${colors.darker},
 			-5px -5px 10px ${colors.lighter}
 		`,
-		borderRadius: 10
+		borderRadius: 10,
 	},
 	inset: {
 		background: colors.background,
@@ -15,7 +15,7 @@ const neumorphism = {
 			inset 3px 3px 6px ${colors.darker},
 			inset -3px -3px 6px ${colors.lighter}
 		`,
-		borderRadius: 10
+		borderRadius: 10,
 	}
 };
 

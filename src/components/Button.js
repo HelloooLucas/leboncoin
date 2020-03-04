@@ -5,16 +5,21 @@ const StyledButton = styled.button`
 	${({ theme }) => ({ ...theme.neumorphism.outset })};
 	width: ${({ square }) => square ? '50px' : '100px'};
 	height: 50px;
-	background: ${({ theme, color }) => color ? theme.colors[color] : theme.colors.background};
+	background: ${({ type, theme }) => type ? theme.colors[type] : theme.colors.background};
 	cursor: pointer;
 	outline: none;
+	transition-duration: .5s;
+
+	:active {
+		${({ theme }) => ({ ...theme.neumorphism.inset })};
+		background: ${({ type, theme }) => theme.colors[type] };
+	}
 `;
 
-const Button = ({ type, color, handleClick, square, children }) => {
+const Button = ({ type, handleClick, square, children }) => {
 	return (
 		<StyledButton
 			type={type}
-			color={color}
 			onClick={handleClick}
 			square={square}
 		>

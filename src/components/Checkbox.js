@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Label = styled.label`
-	${({ theme, isClicked }) => isClicked ? ({ ...theme.neumorphism.inset }) : ({ ...theme.neumorphism.outset })};
+	${({ theme, isChecked }) => isChecked ? ({ ...theme.neumorphism.inset }) : ({ ...theme.neumorphism.outset })};
 	width: 50px;
 	height: 50px;
 	margin-right: 60px;
@@ -18,9 +18,9 @@ const Input = styled.input`
 `;
 
 const Checkbox = ({ id, value, onChange, children }) => {
-	const isClicked = value;
+	const isChecked = value;
 	return (
-		<Label htmlFor={id} isClicked={isClicked}>
+		<Label htmlFor={id} isChecked={isChecked}>
 			<Input
 				type="checkbox"
 				id={id}

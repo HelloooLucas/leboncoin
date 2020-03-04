@@ -29,10 +29,7 @@ const Login = ({ setUsername }) => {
 		<Wrapper>
 			<SimpleForm handleSubmit={handleSubmit}>
 				<TextInput onChange={handleChange} placeholder='Who are you? 👀' />
-				<Button
-					type='submit'
-					color='confirm'
-				>
+				<Button type='submit'>
 					<Icon icon={faSignInAlt} />
 				</Button>
 			</SimpleForm>

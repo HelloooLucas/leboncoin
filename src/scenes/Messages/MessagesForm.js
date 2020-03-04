@@ -2,14 +2,20 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 // import axios from 'axios';
 
 import { postMessage } from './../../api';
 import { SimpleForm, TextInput, Checkbox, Button } from './../../components';
 
-const Icon = styled(FontAwesomeIcon)`
+const PrivateIcon = styled(FontAwesomeIcon)`
 	font-size: ${({ theme }) => theme.fontSizes.xl };
 	color: ${({ theme, isprivate }) => isprivate ? theme.colors.disabled : theme.colors.enabled };
+`;
+
+const SendIcon = styled(FontAwesomeIcon)`
+	font-size: ${({ theme }) => theme.fontSizes.xl };
+	color: ${({ theme }) =>theme.colors.background };
 `;
 
 const MessagesForm = ({ username, setShouldFetch }) => {
@@ -57,9 +63,11 @@ const MessagesForm = ({ username, setShouldFetch }) => {
 				value={isPrivate}
 				onChange={handleIsPrivateChange}
 			>
-				<Icon icon={checboxIcon} isprivate={isPrivate} />
+				<PrivateIcon icon={checboxIcon} isprivate={isPrivate} />
 			</Checkbox>
-			<Button type="submit" color="confirm">Send</Button>
+			<Button type="submit">
+				<SendIcon icon={faPaperPlane} />
+			</Button>
 		</SimpleForm>
 	);
 }

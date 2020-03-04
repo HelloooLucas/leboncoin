@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 const Input = styled.input`
 	${({ theme }) => ({ ...theme.neumorphism.inset })};
-	${({ long }) => long ? ({ flex: 1 }) : ({ width: '250px' })}
+	${({ long }) => long ? ({ flex: 1 }) : ({ width: '250px' })};
+	color: ${({ theme }) => theme.colors.darkGrey };
 	height: 50px;
 	margin-right: 30px;
 	padding-left: 20px;
