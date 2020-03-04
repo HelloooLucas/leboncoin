@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 import { Button } from './';
 
@@ -8,6 +10,11 @@ const Wrapper = styled.nav`
 	height: 50px;
 	display: flex;
 	justify-content: space-between;
+`;
+
+const Icon = styled(FontAwesomeIcon)`
+	font-size: ${({ theme }) => theme.fontSizes.xl};
+	color: ${({ theme }) => theme.colors.disabled};
 `;
 
 const Greeting = styled.h3`
@@ -19,7 +26,9 @@ const Nav = ({ username, setUsername }) => {
 	return (
 		<Wrapper>
 			<Greeting>Your messages, {username}</Greeting>
-			<Button onClick={handleLogout} square>Log out</Button>
+			<Button handleClick={handleLogout} square>
+				<Icon icon={faSignOutAlt} />
+			</Button>
 		</Wrapper>
 	);
 }

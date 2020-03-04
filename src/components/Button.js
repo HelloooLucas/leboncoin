@@ -10,11 +10,12 @@ const StyledButton = styled.button`
 	outline: none;
 `;
 
-const Button = ({ type, color, square, children }) => {
+const Button = ({ type, color, handleClick, square, children }) => {
 	return (
 		<StyledButton
 			type={type}
 			color={color}
+			onClick={handleClick}
 			square={square}
 		>
 			{children}
