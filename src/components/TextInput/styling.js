@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const Input = styled.input`
+export const Input = styled.input`
 	${({ theme }) => ({ ...theme.neumorphism.inset })};
 	${({ long }) => long ? ({ flex: 1 }) : ({ width: '250px' })};
 	color: ${({ theme }) => theme.colors.darkGrey };
@@ -15,17 +14,3 @@ const Input = styled.input`
 		font-style: italic;
 	}
 `;
-
-const TextInput = ({ value, onChange, placeholder, long }) => {
-	return (
-		<Input
-			type='text'
-			value={value}
-			onChange={onChange}
-			placeholder={placeholder}
-			long={long}
-		/>
-	);
-}
- 
-export default TextInput;

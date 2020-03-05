@@ -1,9 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const Form = styled.form`
-	display: flex;
-`;
+import { Form } from './styling';
 
 const SimpleForm = ({ handleSubmit, children }) => {
 	return (
