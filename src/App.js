@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { Login, Messages } from './scenes';
+import { Login, Messages } from './pages';
 import { Nav } from './components';
 import { GlobalStyle } from './style';
 

@@ -1,20 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
 
-import MessagesList from './MessagesList';
-import MessagesForm from './MessagesForm';
+import { Wrapper } from './styling';
+import { MessagesList, MessagesForm } from './subcomponents';
 import { fetchMessages } from './../../api';
-
-const Wrapper = styled.div`
-	width: 100%;
-	height: calc(100vh - 150px);
-	display: flex;
-	flex-direction: column;
-`;
 
 const MessagesContainer = ({ username }) => {
 	const [messages, setMessages] = useState([]);
-	const [shouldFetch, setShouldFetch] = useState(true);
 	const authorizedMessages = messages.filter(msg => !msg.isPrivate || msg.author === username);
 
 	useEffect(() => {
@@ -25,15 +16,10 @@ const MessagesContainer = ({ username }) => {
 		return () => clearInterval(intervalId);
 	}, []);
 
-	useEffect(() => {
-		shouldFetch && fetchMessages(setMessages);
-		setShouldFetch(false);
-	}, [shouldFetch]);
-
 	return (
 		<Wrapper>
 			<MessagesList username={username} messages={authorizedMessages} />
-			<MessagesForm username={username} setShouldFetch={setShouldFetch} />
+			<MessagesForm username={username} setMessages={setMessages} />
 		</Wrapper>
 	);
 }

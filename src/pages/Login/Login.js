@@ -1,21 +1,8 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSignInAlt } from '@fortawesome/free-solid-svg-icons'
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 
-import { TextInput, Button, SimpleForm } from './../components';
-
-const Wrapper = styled.div`
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-`;
-
-const Icon = styled(FontAwesomeIcon)`
-	font-size: ${({ theme }) => theme.fontSizes.xl};
-	color: ${({ theme }) => theme.colors.background};
-`;
+import { TextInput, Button, SimpleForm } from './../../components';
+import { Wrapper, Icon } from './styling';
 
 const Login = ({ setUsername }) => {
 	const [userInput, setUserInput] = useState('');

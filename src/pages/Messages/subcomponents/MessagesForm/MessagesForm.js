@@ -1,24 +1,14 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons'
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
+import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 // import axios from 'axios';
 
-import { postMessage } from './../../api';
-import { SimpleForm, TextInput, Checkbox, Button } from './../../components';
+import { postMessage, fetchMessages } from './../../../../api';
+import { SendIcon, PrivateIcon } from './styling';
+import { SimpleForm, TextInput, Button } from './../../../../components';
+import { Checkbox } from './subcomponents';
 
-const PrivateIcon = styled(FontAwesomeIcon)`
-	font-size: ${({ theme }) => theme.fontSizes.xl };
-	color: ${({ theme, isPrivate }) => isPrivate ? theme.colors.private : theme.colors.public };
-`;
-
-const SendIcon = styled(FontAwesomeIcon)`
-	font-size: ${({ theme }) => theme.fontSizes.xl };
-	color: ${({ theme }) =>theme.colors.background };
-`;
-
-const MessagesForm = ({ username, setShouldFetch }) => {
+const MessagesForm = ({ username, setMessages }) => {
 	// const reset = () => {
 	// 	axios.delete('http://localhost:3001/messages/5')
 	// 	axios.delete('http://localhost:3001/messages/6')
@@ -46,7 +36,7 @@ const MessagesForm = ({ username, setShouldFetch }) => {
 			postMessage({ content, isPrivate , author: username });
 			setContent('');
 			setIsPrivate(false);
-			setShouldFetch(true);
+			fetchMessages(setMessages);
 		}
 	};
 	return (

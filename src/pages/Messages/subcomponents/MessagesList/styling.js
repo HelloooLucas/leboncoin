@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
 	width: 100%;
 	padding-top: 50px;
 	margin-bottom: 50px;
@@ -11,7 +10,7 @@ const Wrapper = styled.div`
 	overflow: scroll;
 `;
 
-const Message = styled.div`
+export const Message = styled.div`
 	${({ theme }) => ({ ...theme.neumorphism.outset })};
 	width: auto;
 	max-width: 60%;
@@ -34,25 +33,7 @@ const Message = styled.div`
 	}
 `;
 
-const AuthorName = styled.h3`
+export const AuthorName = styled.h3`
 	font-weight: bold;
 	margin-bottom: 8px;
 `;
-
-const MessagesList = ({ username, messages }) => {
-	return (
-		<Wrapper>
-			{messages.map(({ author, content, isPrivate, id }) => {
-				const isAuthor = author === username;
-				return (
-					<Message key={id} isAuthor={isAuthor} isPrivate={isPrivate}>
-						{!isAuthor && <AuthorName>{author}</AuthorName>}
-						<p>{content}</p>
-					</Message>
-				)
-			})}
-		</Wrapper>
-	);
-}
- 
-export default MessagesList;
