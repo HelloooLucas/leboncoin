@@ -18,8 +18,14 @@ const Messages = ({ username }) => {
 
 	return (
 		<Wrapper data-testid='messages'>
-			<MessagesList username={username} messages={authorizedMessages} />
-			<MessagesForm username={username} setMessages={setMessages} />
+			<MessagesList
+				username={username}
+				messages={authorizedMessages}
+			/>
+			<MessagesForm
+				username={username}
+				setMessages={setMessages}
+			/>
 		</Wrapper>
 	);
 }

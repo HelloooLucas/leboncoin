@@ -39,7 +39,10 @@ const MessagesForm = ({ username, setMessages }) => {
 		}
 	};
 	return (
-		<SimpleForm handleSubmit={handleSubmit}>
+		<SimpleForm
+			data-testid='messages-form'
+			handleSubmit={handleSubmit}
+		>
 			{/* <button onClick={reset}>RESET</button> */}
 			<TextInput
 				value={content}
@@ -52,7 +55,7 @@ const MessagesForm = ({ username, setMessages }) => {
 				value={isPrivate}
 				onChange={handleIsPrivateChange}
 			>
-				<PrivateIcon icon={checboxIcon} isPrivate={isPrivate} />
+				<PrivateIcon icon={checboxIcon} isprivate={isPrivate ? 1 : 0} />
 			</Checkbox>
 			<Button type="submit">
 				<SendIcon icon={faPaperPlane} />

@@ -4,7 +4,7 @@ import { Wrapper, Message, AuthorName } from './styling';
 
 const MessagesList = ({ username, messages }) => {
 	return (
-		<Wrapper>
+		<Wrapper data-testid='messages-list'>
 			{messages.map(({ author, content, isPrivate, id }) => {
 				const isAuthor = author === username;
 				return (

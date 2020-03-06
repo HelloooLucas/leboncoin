@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 
 import { Login, Messages } from './pages';
 import { Nav } from './components';
