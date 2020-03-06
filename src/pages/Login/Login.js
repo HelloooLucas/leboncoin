@@ -13,7 +13,7 @@ const Login = ({ setUsername }) => {
 	};
 
 	return (
-		<Wrapper>
+		<Wrapper data-testid='login'>
 			<SimpleForm handleSubmit={handleSubmit}>
 				<TextInput onChange={handleChange} placeholder='Who are you? 👀' />
 				<Button type='submit'>

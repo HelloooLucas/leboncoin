@@ -7,7 +7,7 @@ import { GlobalStyle } from './style';
 
 
 function App() {
-	const [username, setUsername] = useState('Lucas');
+	const [username, setUsername] = useState('');
   	return (
 		<>
 			<GlobalStyle />

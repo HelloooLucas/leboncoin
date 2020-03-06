@@ -17,7 +17,7 @@ const MessagesContainer = ({ username }) => {
 	}, []);
 
 	return (
-		<Wrapper>
+		<Wrapper data-testid='messages'>
 			<MessagesList username={username} messages={authorizedMessages} />
 			<MessagesForm username={username} setMessages={setMessages} />
 		</Wrapper>

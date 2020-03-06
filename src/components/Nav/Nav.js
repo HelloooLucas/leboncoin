@@ -7,7 +7,7 @@ import { Wrapper, Greeting, Icon } from './styling';
 const Nav = ({ username, setUsername }) => {
 	const handleLogout = () => setUsername('');
 	return (
-		<Wrapper>
+		<Wrapper data-testid='nav'>
 			<Greeting>Your messages, {username}</Greeting>
 			<Button handleClick={handleLogout} square>
 				<Icon icon={faSignOutAlt} />
