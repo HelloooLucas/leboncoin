@@ -35,7 +35,6 @@ const MessagesForm = ({ username, setMessages }) => {
 		if (content) {
 			postMessage({ content, isPrivate , author: username });
 			setContent('');
-			setIsPrivate(false);
 			fetchMessages(setMessages);
 		}
 	};

@@ -9,7 +9,7 @@ const Login = ({ setUsername }) => {
 	const handleChange = e => setUserInput(e.target.value);
 	const handleSubmit = e => {
 		e.preventDefault();
-		setUsername(userInput)
+		if(userInput) setUsername(userInput)
 	};
 
 	return (

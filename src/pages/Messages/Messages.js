@@ -4,7 +4,7 @@ import { Wrapper } from './styling';
 import { MessagesList, MessagesForm } from './subcomponents';
 import { fetchMessages } from './../../api';
 
-const MessagesContainer = ({ username }) => {
+const Messages = ({ username }) => {
 	const [messages, setMessages] = useState([]);
 	const authorizedMessages = messages.filter(msg => !msg.isPrivate || msg.author === username);
 
@@ -24,4 +24,4 @@ const MessagesContainer = ({ username }) => {
 	);
 }
  
-export default MessagesContainer;
+export default Messages;
