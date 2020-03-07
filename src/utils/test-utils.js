@@ -4,9 +4,9 @@ import { ThemeProvider } from 'styled-components';
 
 import { theme } from './../style';
 
-const renderWithTheme = Component => render(
+const renderWithTheme = component => render(
 	<ThemeProvider theme={theme}>
-		<Component />
+		{component}
 	</ThemeProvider>
 );
 

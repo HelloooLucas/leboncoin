@@ -5,7 +5,11 @@ import { Label, Input } from './styling';
 const Checkbox = ({ id, value, onChange, children }) => {
 	const isChecked = value;
 	return (
-		<Label htmlFor={id} isChecked={isChecked}>
+		<Label
+			htmlFor={id}
+			isChecked={isChecked}
+			data-testid='checkbox'
+		>
 			<Input
 				type="checkbox"
 				id={id}

@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { Button } from './';
-
 export const Wrapper = styled.nav`
 	width: 100%;
 	height: 50px;
@@ -17,5 +15,5 @@ export const Icon = styled(FontAwesomeIcon)`
 `;
 
 export const Greeting = styled.h3`
-	font-size: ${({ theme }) => theme.fontSizes.xl };
+	font-size: ${({ theme }) => theme.fontSizes.xxl };
 `;

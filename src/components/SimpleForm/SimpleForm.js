@@ -4,7 +4,10 @@ import { Form } from './styling';
 
 const SimpleForm = ({ handleSubmit, children }) => {
 	return (
-		<Form onSubmit={handleSubmit}>
+		<Form
+			onSubmit={handleSubmit}
+			data-testid='simple-form'
+		>
 			{children}
 		</Form>
 	)
