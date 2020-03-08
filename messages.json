@@ -1,0 +1,82 @@
+{
+  "messages": [
+    {
+      "id": 0,
+      "author": "Paul",
+      "content": "Wassup guys, vous faites quelque chose ce soir ?",
+      "isPrivate": false
+    },
+    {
+      "id": 1,
+      "author": "Martin",
+      "content": "Chaud d'un ciné, ils jouent encore Parasite je crois",
+      "isPrivate": false
+    },
+    {
+      "id": 2,
+      "author": "Lucas",
+      "content": "Archi chaud faut que je le voie, je propose à Marie",
+      "isPrivate": false
+    },
+    {
+      "id": 3,
+      "author": "Paul",
+      "content": "Lourd je vous rejoins",
+      "isPrivate": false
+    },
+    {
+      "id": 4,
+      "author": "Paul",
+      "content": "Sérieux il peut rien faire sans Marie ?",
+      "isPrivate": true
+    },
+    {
+      "content": "Yeah",
+      "isPrivate": true,
+      "author": "Lucas",
+      "id": 5
+    },
+    {
+      "content": "Yo",
+      "isPrivate": false,
+      "author": "Lucas",
+      "id": 6
+    },
+    {
+      "content": "yo",
+      "isPrivate": false,
+      "author": "l",
+      "id": 7
+    },
+    {
+      "content": "yo",
+      "isPrivate": false,
+      "author": "l",
+      "id": 8
+    },
+    {
+      "content": "yo",
+      "isPrivate": false,
+      "author": "l",
+      "id": 9
+    },
+    {
+      "content": "yo",
+      "isPrivate": false,
+      "author": "l",
+      "id": 10
+    },
+    {
+      "content": "yo",
+      "isPrivate": false,
+      "author": "l",
+      "id": 11
+    },
+    {
+      "content": "Yoyo",
+      "isPrivate": false,
+      "author": "Lucas",
+      "id": 12
+    }
+  ]
+}

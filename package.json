@@ -8,8 +8,6 @@
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.8",
     "axios": "^0.19.2",
-    "jest-dom": "^4.0.0",
-    "jest-styled-components": "^7.0.0",
     "json-server": "^0.16.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
@@ -18,7 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "startdb": "json-server --watch ./src/api/messages.json",
+    "startdb": "json-server --watch ./messages.json",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -42,6 +40,8 @@
     "@testing-library/dom": "^6.15.0",
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^10.0.0"
+    "@testing-library/user-event": "^10.0.0",
+    "jest-dom": "^4.0.0",
+    "jest-styled-components": "^7.0.0"
   }
 }

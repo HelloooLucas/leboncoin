@@ -4,8 +4,7 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 import { postMessage, fetchMessages } from './../../../../api';
 import { SendIcon, PrivateIcon } from './styling';
-import { SimpleForm, TextInput, Button } from './../../../../components';
-import { Checkbox } from './subcomponents';
+import { SimpleForm, TextInput, Button, Checkbox } from './../../../../components';
 
 const MessagesForm = ({ username, setMessages }) => {
 	const [content, setContent] = useState('');

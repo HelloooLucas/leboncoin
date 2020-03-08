@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from 'test-utils';
+import { render } from 'test-utils';
 import Nav from './Nav';
 
 test('Renders the greetings and the logout button', () => {

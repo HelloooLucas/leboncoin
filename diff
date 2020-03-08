@@ -1,0 +1,103 @@
+diff --git a/src/App.js b/src/App.js
+index 4033a32..e7bd1ea 100644
+--- a/src/App.js
++++ b/src/App.js
+@@ -11,6 +11,10 @@ function App() {
+ 		<>
+ 			<GlobalStyle />
+ 			{
++				// Could be wrap in a function that convey more meaninng like isUserLogged() 
++				// currently the condition is simple, but if it becomes bigger (eg. username && other_bool1 || other_bool2)
++				// But maybe this is considered YAGNI in the scope of the challenge... 
++				// isUserLogged() ? 	
+ 				username ? 
+ 					<>
+ 						<Nav username={username} setUsername={setUsername} />
+diff --git a/src/api/index.js b/src/api/index.js
+index 7c4b8e8..a73e811 100644
+--- a/src/api/index.js
++++ b/src/api/index.js
+@@ -1,12 +1,29 @@
+-import axios from 'axios';
+-const apiUrl = 'http://localhost:3001/messages';
++import axios from "axios";
++const apiUrl = "http://localhost:3001/messages";
+ 
+-export const fetchMessages = (setMessages) =>
+-	axios.get(apiUrl)
+-		.then(response => {console.log('fetched'); setMessages(response.data)})
+-		.catch(error => console.log('Error while fetching messages'));
++// Use prettier for better formatting and homogeneity amongst team members
++export const fetchMessages = setMessages =>
++  axios
++    .get(apiUrl)
++    .then(response => {
++      console.log("fetched");
++      setMessages(response.data);
++    })
++    .catch(error => console.log("Error while fetching messages"));
+ 
+ export const postMessage = message =>
+-	axios.post(apiUrl, message)
+-		.then(response => console.log(response.data))
+-		.catch(error => console.log('Error while posting message'));
++  axios
++    .post(apiUrl, message)
++    .then(response => console.log(response.data))
++    .catch(error => console.log("Error while posting message"));
++
++// I would have used async/await somewhere just to show you know how to use it
++// but I agree that above the Promise chaining notation is cleaner
++export const postMessageAsyncAwait = async message => {
++  try {
++    const response = await axios.post(apiUrl, message);
++    console.log("Successfully sent data :", response.data);
++  } catch (error) {
++    console.error("Error while posting message", error);
++  }
++};
+diff --git a/src/components/Nav/Nav.js b/src/components/Nav/Nav.js
+index 9e4212e..2f59cff 100644
+--- a/src/components/Nav/Nav.js
++++ b/src/components/Nav/Nav.js
+@@ -1,4 +1,5 @@
+ import React from 'react';
++// same comment as for the other icons import
+ import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+ 
+ import { Button } from './../';
+diff --git a/src/components/Nav/Nav.test.js b/src/components/Nav/Nav.test.js
+index 2b5c190..74a2cdc 100644
+--- a/src/components/Nav/Nav.test.js
++++ b/src/components/Nav/Nav.test.js
+@@ -1,4 +1,5 @@
+ import React from 'react';
++// Unused import fireEvent 
+ import { render, fireEvent } from 'test-utils';
+ import Nav from './Nav';
+ 
+diff --git a/src/pages/Login/Login.js b/src/pages/Login/Login.js
+index a8a04e4..314f3bc 100644
+--- a/src/pages/Login/Login.js
++++ b/src/pages/Login/Login.js
+@@ -1,4 +1,7 @@
+ import React, { useState } from 'react';
++// Maybe this could be located in the style folder in a icons.js file
++// that re-export the icon, but hides the source, 
++// so that login component doesn't care if the icon comes from a npm package or an url or whatever 
+ import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+ 
+ import { TextInput, Button, SimpleForm } from './../../components';
+diff --git a/src/pages/Messages/Messages.js b/src/pages/Messages/Messages.js
+index 41d31b9..5f12ff4 100644
+--- a/src/pages/Messages/Messages.js
++++ b/src/pages/Messages/Messages.js
+@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
+ 
+ import { Wrapper } from './styling';
+ import { MessagesList, MessagesForm } from './subcomponents';
++
++// Cool that you abstracted away the API logic here
+ import { fetchMessages } from './../../api';
+ 
+ const Messages = ({ username }) => {
